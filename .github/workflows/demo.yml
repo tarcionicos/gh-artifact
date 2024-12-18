@@ -59,3 +59,14 @@ jobs:
         run: echo "${{needs.build.outputs.script-file}}"
       - name: Deploy
         run: echo "Deploying..."
+  meet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Google Chat 
+        uses: tarcionicos/main@master
+        with:
+          name: Build
+          url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          status: ${{ job.status }}
+        if: always()
+        continue-on-error: true

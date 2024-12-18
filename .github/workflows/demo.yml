@@ -60,7 +60,7 @@ jobs:
       - name: Deploy
         run: echo "Deploying..."
   meet:
-    needs: build
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Google Chat 

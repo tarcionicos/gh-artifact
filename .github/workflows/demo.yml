@@ -71,4 +71,4 @@ jobs:
           url: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
           status: ${{ job.status }}
         if: always()
-        continue-on-error: false
+        continue-on-error: true
